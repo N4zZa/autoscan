@@ -119,3 +119,5 @@ by: matteo nazzaro.
     return 0;
 }
 ```
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Made with C++](https://img.shields.io/badge/made%20with-C%2B%2B-blue)
