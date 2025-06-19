@@ -37,7 +37,7 @@
 
 ---
 
-##🔧 How to Compile & Run
+## 🔧 How to Compile & Run
 To compile and run this C++ program on Linux:
 ```bash
 g++ ScanneNmap.cpp -o AutoScan
