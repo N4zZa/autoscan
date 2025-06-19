@@ -1,5 +1,7 @@
-#include<iostream>
-#include<cstdlib>
+#include <iostream>
+#include <cstdlib>
+#include <unistd.h>
+
 using namespace std;
 
 int main()
@@ -8,22 +10,33 @@ int main()
     int instalar;
     string objetivo;
 
-    cout << "\033[1;32m";
+    cout << "Cargando";
+    for(int i=0; i<5; i++){
+        cout << ".";
+        fflush(stdout);
+        sleep(1);
+    }
+    system("clear");
+    cout << endl;
+   cout << "\033[1;32m";
 
     cout << R"(
-  ___  _   _ _____ _____ _____ _____   ___   _   _
- / _ \| | | |_   _|  _  /  ___/  __ \ / _ \ | \ | |
-/ /_\ \ | | | | | | | | \ --.| /  \// /_\ \|  \| |
-|  _  | | | | | | | | | |--. \ |    |  _  || .  |
-| | | | |_| | | | \ \_/ /\__/ / \__/\| | | || |\  |
-\_| |_/\___/  \_/  \___/\____/ \____/\_| |_/\_| \_/
-by: matteo nazzaro.
+ █████╗ ██╗   ██╗████████╗ ██████╗ ███████╗ ██████╗ █████╗ ███╗   ██╗
+██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗██╔════╝██╔════╝██╔══██╗████╗  ██║
+███████║██║   ██║   ██║   ██║   ██║███████╗██║     ███████║██╔██╗ ██║
+██╔══██║██║   ██║   ██║   ██║   ██║╚════██║██║     ██╔══██║██║╚██╗██║
+██║  ██║╚██████╔╝   ██║   ╚██████╔╝███████║╚██████╗██║  ██║██║ ╚████║
+╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
+                  NMAP AUTO-SCANNER by: n4Zza.
+
     )" << endl;
 
     cout << "\033[0m";
 
-    cout << "Este programa requiere permisos de administrador." << endl;
+    cout << "\033[1;36m[*] Comprobando permisos sudo... \033[0m" << endl;
     system("sudo -v");
+
+    cout << "\033[1;31m[!] Advertencia: Este programa requiere privilegios de administrador.\033[0m" << endl;
 
     cout << "Desea instalar Nmap (por si no lo tiene instalado)?" << endl;
     cout << "[1] Si, instalar ahora." << endl;
@@ -32,19 +45,19 @@ by: matteo nazzaro.
     cin >> instalar;
 
     if(instalar == 1){
-    cout<<"El programa estara listo dentro de poco."<<endl;
+        cout << "\033[1;33m[+] El programa estará listo dentro de poco.\033[0m" << endl;
         system("sudo apt install nmap -y");
     }
     else if(instalar != 2){
-        cout << "Opcion invalida. Continuando de todas formas..." << endl;
+        cout << "\033[1;31m[!] Opcion invalida. Continuando de todas formas...\033[0m" << endl;
     }
+
     system("clear");
 
     cout << "Ingrese la direccion IP o URL: ";
     cin >> objetivo;
 
     system("clear");
-
 
     cout << "Seleccione el tipo de escaneo" << endl;
     cout << "[1] SYN (-sS)" << endl;
@@ -64,7 +77,7 @@ by: matteo nazzaro.
         case 4: comando += "-O ";  break;
         case 5: comando += "-A ";  break;
         default:
-            cout << "Opcion invalida" << endl;
+            cout << "\033[1;31m[!] Opcion invalida\033[0m" << endl;
             return 0;
     }
 
@@ -72,8 +85,16 @@ by: matteo nazzaro.
 
     system("clear");
 
+    cout << "\033[1;32m---------------------------------------------\033[0m" << endl;
+    cout << "\033[1;36mEjecutando escaneo Nmap...\033[0m" << endl;
+    cout << "\033[1;32m---------------------------------------------\033[0m" << endl;
+
     cout << "Ejecutando: " << comando << endl;
     system(comando.c_str());
+
+    cout << "\033[1;32m[+] Escaneo finalizado. Analiza los resultados con cuidado...\033[0m" << endl;
+
+    cout << "\033[0m";
 
     return 0;
 }
