@@ -36,6 +36,25 @@
 - Internet connection (for installing Nmap if not present)
 
 ---
+To compile and run this C++ program on Linux:
+```bash
+g++ ScanneNmap.cpp -o AutoScan
+./AutoScan
+```
+Or compile and run in one line:
+```bash
+g++ ScanneNmap.cpp -o AutoScan && ./AutoScan
+```
+⚠️ Notes:
+Make sure you are in the same directory as your .cpp file:
+```bash
+cd /path/to/your/file
+```
+If your program requires superuser permissions (like running Nmap):
+
+```bash
+sudo ./AutoScan
+```
 
 ## 🔧 Example Code
 ```bash
