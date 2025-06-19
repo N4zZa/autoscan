@@ -1,43 +1,43 @@
 # 🔍 AutoScan
 
-**Proyecto personal open-source:** Utilidad simple en C++ que ejecuta escaneos Nmap desde consola Linux.
+**Personal open-source project:** A simple C++ utility to run Nmap scans from the Linux terminal.
 
 ---
 
-## 🚀 ¿Qué hace?
+## 🚀 What does it do?
 
-- Detecta si tenés Nmap instalado (y lo instala si querés).
-- Permite elegir entre distintos tipos de escaneo: SYN, TCP, UDP, detección de SO o escaneo agresivo.
-- Ejecuta el escaneo sobre la IP o dominio que ingreses.
+- Detects if Nmap is installed (and offers to install it if missing).
+- Allows you to choose between different types of scans: SYN, TCP, UDP, OS detection, or Aggressive scan.
+- Executes the selected scan on any IP or domain you enter.
 
 ---
 
-## 🛠️ Tecnologías usadas
+## 🛠️ Technologies Used
 
 - C++
 - Nmap
-- Linux (compatible solo con distros que usen APT)
+- Linux (compatible only with distros using APT)
 
 ---
 
-## 📦 Archivos
+## 📦 Files
 
-| Archivo               | Descripción                             |
-|----------------------|-----------------------------------------|
-| `ScanneNmap.cpp`      | Código fuente principal (C++)            |
-| `Codigo OpenSource.md`| Documento explicativo del proyecto       |
-
----
-
-## ⚠️ Requisitos
-
-- Sistema operativo Linux
-- Permisos de superusuario (sudo)
-- Conexión a internet (para instalar Nmap si no está)
+| File                 | Description                           |
+|----------------------|---------------------------------------|
+| `ScanneNmap.cpp`      | Main source code (C++)                |
+| `Codigo OpenSource.md`| Project explanation document (in Spanish) |
 
 ---
 
+## ⚠️ Requirements
 
+- Linux-based operating system
+- Superuser privileges (sudo)
+- Internet connection (for installing Nmap if not present)
+
+---
+
+## 🔧 Example Code
 ```bash
 #include<iostream>
 #include<cstdlib>
